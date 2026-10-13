@@ -1,0 +1,12 @@
+git --version
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+git config --list
+mkdir git_project
+cd git_project
+git init
+echo "Hello Git" > README.md
+git status
+git add README.md
+git commit -m "Initial commit"
+git log --oneline
