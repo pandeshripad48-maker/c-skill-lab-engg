@@ -1,0 +1,18 @@
+mkdir branching_project
+cd branching_project
+git init
+git config user.name "Your Name"
+git config user.email "your@email.com"
+echo "Main branch" > file.txt
+git add file.txt
+git commit -m "Initial commit"
+git branch
+git branch feature
+git switch feature
+echo "Feature branch changes" >> file.txt
+git add file.txt
+git commit -m "Added feature"
+git switch master
+git merge feature
+git branch
+git log --oneline --all --graph
