@@ -1,0 +1,13 @@
+mkdir devops_project
+cd devops_project
+mkdir planning development testing deployment monitoring
+touch planning/requirements.txt
+touch development/app.py
+touch testing/test_app.py
+touch deployment/Dockerfile
+touch monitoring/logs.txt
+echo "DevOps Lifecycle Project" > planning/requirements.txt
+echo "print('Hello DevOps')" > development/app.py
+echo "print('Testing Application')" > testing/test_app.py
+echo "DevOps lifecycle folders created successfully"
+find . -type f
