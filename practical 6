@@ -1,0 +1,13 @@
+gcloud --version
+gcloud auth login
+gcloud projects list
+gcloud config set project YOUR_PROJECT_ID
+gcloud services enable run.googleapis.com
+gcloud services enable cloudbuild.googleapis.com
+mkdir gcp-project
+cd gcp-project
+echo '<!DOCTYPE html><html><head><title>GCP Project</title></head><body><h1>Hello Google Cloud</h1><p>My first cloud application.</p></body></html>' > index.html
+echo 'FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80' > Dockerfile
+gcloud run deploy my-cloud-app --source . --region asia-south1 --allow-unauthenticated
