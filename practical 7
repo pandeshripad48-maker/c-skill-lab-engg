@@ -1,0 +1,21 @@
+docker --version
+docker pull nginx
+docker images
+docker run -d --name mycontainer -p 8080:80 nginx
+docker ps
+docker ps -a
+docker exec -it mycontainer sh
+docker logs mycontainer
+docker stop mycontainer
+docker start mycontainer
+docker restart mycontainer
+docker rm -f mycontainer
+mkdir docker-project
+cd docker-project
+echo '<!DOCTYPE html><html><body><h1>Hello Docker</h1></body></html>' > index.html
+echo 'FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80' > Dockerfile
+docker build -t mywebapp .
+docker run -d --name webcontainer -p 8080:80 mywebapp
+docker ps
